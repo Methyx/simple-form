@@ -31,3 +31,27 @@ h1 {
 .input-container p {
   margin-bottom: 5px;
 }
+
+.results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.recap {
+  width: 400px;
+  height: 100px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  background-color: #f2f2f2;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.results button {
+  height: 40px;
+  background-color: #574dcc;
+  color: white;
+  border-radius: 5 px;
+  padding: 0 10px;
+}

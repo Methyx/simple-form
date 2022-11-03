@@ -1,4 +1,4 @@
-const StepTwo = ({ data, result }) => {
+const StepTwo = ({ data, setValid }) => {
   return (
     <div className="results">
       <h1>Results</h1>
@@ -7,7 +7,7 @@ const StepTwo = ({ data, result }) => {
         <p>{`Email : ${data.email[0]}`}</p>
         <p>{`Password : ${data.password[0]}`}</p>
       </div>
-      <button className="edit" onClick={result(false)}>
+      <button className="edit" onClick={() => setValid(false)}>
         Edit your information
       </button>
     </div>

@@ -1,9 +1,10 @@
 import { useState } from "react";
 
-const Form = ({ data, result }) => {
+const Form = ({ data, setValid }) => {
   const [name, setName] = data.name;
   const [email, setEmail] = data.email;
   const [password, setPassword] = data.password;
+
   const [password2, setPassword2] = useState("");
 
   const handleSubmit = (event) => {
@@ -11,7 +12,8 @@ const Form = ({ data, result }) => {
     if (password !== password2) {
       alert("Vos deux mots de passe sont différents !");
     } else {
-      result(true);
+      setValid(true);
+      console.log("submit");
     }
   };
 
