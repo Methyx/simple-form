@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react";
+
+import StepTwo from "./components/StepTwo";
+import Form from "./components/Form";
 
 function App() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const data = {
+    name: [name, setName],
+    email: [email, setEmail],
+    password: [password, setPassword],
+  };
+  const [valid, setValid] = useState(false);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {!valid ? (
+        <Form data={data} result={setValid} />
+      ) : (
+        <StepTwo data={data} result={setValid} />
+      )}
     </div>
   );
 }
